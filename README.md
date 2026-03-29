@@ -111,6 +111,36 @@ Your submission will be evaluated based on:
 3. **Plan Your Dashboard**: Design your approach for real-time visualization and event processing
 4. **Build & Deploy**: Implement your solution and deploy to a hosting platform
 
+## Fleet dashboard (implementation in this repo)
+
+An interactive dashboard lives in the [`dashboard/`](./dashboard/) folder. It loads the five trip JSON files from [`assessment-fallback-data/`](./assessment-fallback-data/) (copied into `dashboard/public/data/` before dev/build), **merges all events in chronological order** without materializing one giant array, and advances a simulation clock so events are applied as if they were happening in real time.
+
+**Features:** map with trails and per-trip markers, per-trip cards (progress, speed, battery, signal), fleet summary (active / completed / cancelled, share of active trips past 50% and 80% of planned distance, overspeed and signal-lost counts, events processed), recent event feed, **Play / Pause / Reset**, **1× / 5× / 10×** speed, and a **timeline scrubber**. Layout is responsive (stacked map and sidebar on smaller screens).
+
+### Run locally
+
+```bash
+cd dashboard
+npm install
+npm run dev
+```
+
+The `predev` / `prebuild` scripts copy trip JSON into `public/data/`. Open the URL Vite prints (usually `http://localhost:5173`).
+
+### Production build
+
+```bash
+cd dashboard
+npm run build
+npm run preview   # optional local check of dist/
+```
+
+### Deploy
+
+Deploy the **`dashboard`** folder as a static site: build command `npm run build`, publish directory **`dist`**. Example: in Netlify, set base directory to `dashboard` and use [`dashboard/netlify.toml`](./dashboard/netlify.toml). For Vercel, set the project root to `dashboard` and the output directory to `dist`. **Replace the placeholder below with your live URL before submitting.**
+
+**Live demo:** _Add your deployed URL here_
+
 ---
 
 **Ready to build your fleet tracking dashboard? Start by generating your unique assessment data!**

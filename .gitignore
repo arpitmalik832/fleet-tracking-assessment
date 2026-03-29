@@ -2,3 +2,7 @@ data-generator/node_modules/
 data-generator/assessment-2*
 !assessment-fallback-data/
 output.log
+
+dashboard/node_modules/
+dashboard/dist/
+dashboard/public/data/*.json

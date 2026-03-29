@@ -1,0 +1,1 @@
+{"root":["./src/app.tsx","./src/main.tsx","./src/tripconfig.ts","./src/vite-env.d.ts","./src/components/eventfeed.tsx","./src/components/fleetmap.tsx","./src/components/fleetmetricsbar.tsx","./src/components/tripcards.tsx","./src/lib/loadtrips.ts","./src/lib/simulationengine.ts","./src/types/events.ts"],"version":"5.6.3"}
